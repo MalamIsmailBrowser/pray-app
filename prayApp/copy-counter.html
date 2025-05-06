@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Counter</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="flow-title">Tasbih APP</h1>
+        <p class="dua">SubhanAllah</p>
+        <p class="message">0</p>
+        <button class="js-btn">Press</button>
+        <button class="js-btn js-reset">Reset</button>
+    </div>
+    
+    <script>
+        const messageEl = document.querySelector('.message');
+        const duaEl = document.querySelector('.dua');
+        const jsBtn = document.querySelector('.js-btn');
+        const jsReset = document.querySelector('.js-reset');
+        let count = 0;
+
+        jsBtn.addEventListener('click', () => {
+
+            count++;
+            messageEl.innerHTML = count;
+            if(messageEl.innerHTML >= 0 && messageEl.innerHTML <= 33) {
+                duaEl.innerHTML = 'SubhanAllah';
+            } else if (messageEl.innerHTML > 33 && messageEl.innerHTML <= 66 ) {
+                duaEl.innerHTML = 'Alhamdulillah';
+            } else if (messageEl.innerHTML > 66 && messageEl.innerHTML < 100) {
+                duaEl.innerHTML = 'Allahu Akbar';
+            }})
+
+
+            jsReset.addEventListener('click', function() {
+                count = 0;
+                messageEl.innerHTML = 0;
+                duaEl.innerHTML = 'SubhanAllah';
+            })
+
+
+
+
+        /*function counter() {
+
+            count++;
+            messageEl.innerHTML = count;
+
+            if(messageEl.innerHTML >= 0 && messageEl.innerHTML <= 33) {
+                duaEl.innerHTML = 'SubhanAllah'
+            } else if (messageEl.innerHTML > 33 && messageEl.innerHTML <= 66 ) {
+                duaEl.innerHTML = 'Alhamdulillah'
+            } else if (messageEl.innerHTML > 66 && messageEl.innerHTML < 100) {
+                duaEl.innerHTML = 'Allahu Akbar'
+            }
+        }*/
+
+
+
+
+
+
+    </script>
+</body>
+</html>
